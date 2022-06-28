@@ -11,6 +11,8 @@
 		83BBF521286BAB0D00BF0627 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBF520286BAB0D00BF0627 /* ContentView.swift */; };
 		83BBF523286BAB0F00BF0627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83BBF522286BAB0F00BF0627 /* Assets.xcassets */; };
 		83BBF526286BAB0F00BF0627 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83BBF525286BAB0F00BF0627 /* Preview Assets.xcassets */; };
+		83BBF52D286BAB6600BF0627 /* PhotoStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBF52C286BAB6600BF0627 /* PhotoStyling.swift */; };
+		83BBF52F286BABA600BF0627 /* TrackVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBF52E286BABA600BF0627 /* TrackVariables.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		83BBF520286BAB0D00BF0627 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		83BBF522286BAB0F00BF0627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83BBF525286BAB0F00BF0627 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		83BBF52C286BAB6600BF0627 /* PhotoStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStyling.swift; sourceTree = "<group>"; };
+		83BBF52E286BABA600BF0627 /* TrackVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackVariables.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 				83BBF520286BAB0D00BF0627 /* ContentView.swift */,
 				83BBF522286BAB0F00BF0627 /* Assets.xcassets */,
 				83BBF524286BAB0F00BF0627 /* Preview Content */,
+				83BBF52C286BAB6600BF0627 /* PhotoStyling.swift */,
+				83BBF52E286BABA600BF0627 /* TrackVariables.swift */,
 			);
 			path = F1Legacy;
 			sourceTree = "<group>";
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				83BBF521286BAB0D00BF0627 /* ContentView.swift in Sources */,
+				83BBF52F286BABA600BF0627 /* TrackVariables.swift in Sources */,
 				83BBF51F286BAB0D00BF0627 /* F1LegacyApp.swift in Sources */,
+				83BBF52D286BAB6600BF0627 /* PhotoStyling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
