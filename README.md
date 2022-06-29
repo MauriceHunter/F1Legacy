@@ -17,3 +17,6 @@ Once i figured out how to reuse the component it was as simple as creating a For
 With all great success comes struggle. After i finished my first big refactor i was hit with merge conflicts when trying to push the changes to GitHub.
 After struggling for quite a long while to resolve my conflict i ultimately settled on deleting my respository and creating a new one.
 Lessons learned from that is to make sure you have a .gitignore file setup when you create your repository. In theory my conflicts should be a nonissue moving forward.
+
+June 28, 2022:
+Struggled to figure out exactly how to create the on tap tab view while creating the image. My first thought is ot just make it as part of the loop but my initial attempts have not been successful. I havent figured out how to reference the dictionary by the key yet. Will further explore that during tomorrows efforts.
