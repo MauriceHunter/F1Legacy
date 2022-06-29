@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var tabViewSet = "0"
+    @State private var activeTab = ""
     
     let trackNames = ["Silverstone1950", "Monaco1950", "Indianapolis1950", "Bremgarten1950", "Belgium1950", "France1950", "Italy1950"]
     
@@ -22,11 +23,6 @@ struct ContentView: View {
         }
     }
     
-    var BritainTrackPic: some View =
-        Image("Silverstone1950")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 200, height: 200)
     
     struct BritainView: View {
         var body: some View {
@@ -36,12 +32,6 @@ struct ContentView: View {
         }
     }
     
-    var MonacoTrackPic: some View =
-        Image("Monaco1950")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 200, height: 200)
-    
     struct MonacoView: View {
         var body: some View {
             VStack{
@@ -49,12 +39,6 @@ struct ContentView: View {
             }
         }
     }
-    
-    var IndianapolisTrackPic: some View =
-        Image("Indianapolis1950")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 200, height: 200)
     
     struct IndianapolisView: View {
         var body: some View {
@@ -64,12 +48,6 @@ struct ContentView: View {
         }
     }
     
-    var SwitzerlandTrackPic: some View =
-        Image("Bremgarten1950")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 200, height: 200)
-    
     struct SwitzerlandView: View {
         var body: some View {
             VStack{
@@ -77,12 +55,6 @@ struct ContentView: View {
             }
         }
     }
-    
-    var BelgiumTrackPic: some View =
-        Image("Belgium1950")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 200, height: 200)
     
     struct BelgiumView: View {
         var body: some View {
@@ -92,12 +64,6 @@ struct ContentView: View {
         }
     }
     
-    var FranceTrackPic: some View =
-        Image("France1950")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 200, height: 200)
-    
     struct FranceView: View {
         var body: some View {
             VStack{
@@ -105,12 +71,6 @@ struct ContentView: View {
             }
         }
     }
-    
-    var ItalyTrackPic: some View =
-        Image("Italy1950")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 200, height: 200)
     
     struct ItalyView: View {
         var body: some View {
@@ -142,160 +102,85 @@ struct ContentView: View {
                             .offset(y: 10)
                             .opacity(0.9)
                             .overlay(PhotoStyling(trackImage: name).cornerRadius(12))
+                            .gesture(
+                                TapGesture()
+                                    .onEnded{ _ in
+                                        activeTab = name
+                                        print(name)
+                                    }
+                            )
                     }
+                }
+            } // Scroll view
+            TabView{
+                VStack{
+                    Text(activeTab)
                 }
             }
-            
-            //merge test
-            ScrollView(.horizontal, showsIndicators: false){
-                HStack(spacing: 20){
-                    BritainTrackPic
-                        .cornerRadius(64)
-                        .blur(radius: 10)
-                        .offset(y: 10)
-                        .opacity(0.9)
-                        .overlay(BritainTrackPic.cornerRadius(12))
-                        .gesture(
-                                TapGesture()
-                                    .onEnded { _ in
-                                                tabViewSet = "1"
-                                            }
-                                    )
-                    MonacoTrackPic
-                        .cornerRadius(64)
-                        .blur(radius: 10)
-                        .offset(y: 10)
-                        .opacity(0.9)
-                        .overlay(MonacoTrackPic.cornerRadius(12))
-                        .gesture(
-                                TapGesture()
-                                    .onEnded { _ in
-                                                tabViewSet = "2"
-                                            }
-                                    )
-                    IndianapolisTrackPic
-                        .cornerRadius(64)
-                        .blur(radius: 10)
-                        .offset(y: 10)
-                        .opacity(0.9)
-                        .overlay(IndianapolisTrackPic.cornerRadius(12))
-                        .gesture(
-                                TapGesture()
-                                    .onEnded { _ in
-                                                tabViewSet = "3"
-                                            }
-                                    )
-                    SwitzerlandTrackPic
-                        .cornerRadius(64)
-                        .blur(radius: 10)
-                        .offset(y: 10)
-                        .opacity(0.9)
-                        .overlay(SwitzerlandTrackPic.cornerRadius(12))
-                        .gesture(
-                                TapGesture()
-                                    .onEnded { _ in
-                                                tabViewSet = "4"
-                                            }
-                                    )
-                    BelgiumTrackPic
-                        .cornerRadius(64)
-                        .blur(radius: 10)
-                        .offset(y: 10)
-                        .opacity(0.9)
-                        .overlay(BelgiumTrackPic.cornerRadius(12))
-                        .gesture(
-                                TapGesture()
-                                    .onEnded { _ in
-                                                tabViewSet = "5"
-                                            }
-                                    )
-                    FranceTrackPic
-                        .cornerRadius(64)
-                        .blur(radius: 10)
-                        .offset(y: 10)
-                        .opacity(0.9)
-                        .overlay(FranceTrackPic.cornerRadius(12))
-                        .gesture(
-                                TapGesture()
-                                    .onEnded { _ in
-                                                tabViewSet = "6"
-                                            }
-                                    )
-                    ItalyTrackPic
-                        .cornerRadius(64)
-                        .blur(radius: 10)
-                        .offset(y: 10)
-                        .opacity(0.9)
-                        .overlay(ItalyTrackPic.cornerRadius(12))
-                        .gesture(
-                                TapGesture()
-                                    .onEnded { _ in
-                                                tabViewSet = "7"
-                                            }
-                                    )
-                } // Hstack in scrollview
-            } // Scroll view
-            VStack{
-                if tabViewSet == "0" {
-                    TabView{
-                        NineteenFiftyView()
-                    }
-                    .tabViewStyle(PageTabViewStyle())
-                    .background(.thinMaterial)
-                }
-                if tabViewSet == "1" {
-                    TabView{
-                        BritainView()
-                    }
-                    .tabViewStyle(PageTabViewStyle())
-                    .background(.thinMaterial)
-                }
-                if tabViewSet == "2" {
-                    TabView{
-                        MonacoView()
-                    }
-                    .tabViewStyle(PageTabViewStyle())
-                    .background(.thinMaterial)
-                }
-                if tabViewSet == "3" {
-                    TabView{
-                        IndianapolisView()
-                    }
-                    .tabViewStyle(PageTabViewStyle())
-                    .background(.thinMaterial)
-                }
-                if tabViewSet == "4" {
-                    TabView{
-                        SwitzerlandView()
-                    }
-                    .tabViewStyle(PageTabViewStyle())
-                    .background(.thinMaterial)
-                }
-                if tabViewSet == "5" {
-                    TabView{
-                        BelgiumView()
-                    }
-                    .tabViewStyle(PageTabViewStyle())
-                    .background(.thinMaterial)
-                }
-                if tabViewSet == "6" {
-                    TabView{
-                        FranceView()
-                    }
-                    .tabViewStyle(PageTabViewStyle())
-                    .background(.thinMaterial)
-                }
-                if tabViewSet == "7" {
-                    TabView{
-                        ItalyView()
-                    }
-                    .tabViewStyle(PageTabViewStyle())
-                    .background(.thinMaterial)
-                }
-            }//Tabview vstack
             .frame(maxWidth: .infinity, maxHeight: 400)
             .tabViewStyle(PageTabViewStyle())
             .background(.thinMaterial)
+//            VStack{
+//                if tabViewSet == "0" {
+//                    TabView{
+//                        NineteenFiftyView()
+//                    }
+//                    .tabViewStyle(PageTabViewStyle())
+//                    .background(.thinMaterial)
+//                }
+//                if tabViewSet == "Silverstone1950" {
+//                    TabView{
+//                        BritainView()
+//                    }
+//                    .tabViewStyle(PageTabViewStyle())
+//                    .background(.thinMaterial)
+//                }
+//                if tabViewSet == "2" {
+//                    TabView{
+//                        MonacoView()
+//                    }
+//                    .tabViewStyle(PageTabViewStyle())
+//                    .background(.thinMaterial)
+//                }
+//                if tabViewSet == "3" {
+//                    TabView{
+//                        IndianapolisView()
+//                    }
+//                    .tabViewStyle(PageTabViewStyle())
+//                    .background(.thinMaterial)
+//                }
+//                if tabViewSet == "4" {
+//                    TabView{
+//                        SwitzerlandView()
+//                    }
+//                    .tabViewStyle(PageTabViewStyle())
+//                    .background(.thinMaterial)
+//                }
+//                if tabViewSet == "5" {
+//                    TabView{
+//                        BelgiumView()
+//                    }
+//                    .tabViewStyle(PageTabViewStyle())
+//                    .background(.thinMaterial)
+//                }
+//                if tabViewSet == "6" {
+//                    TabView{
+//                        FranceView()
+//                    }
+//                    .tabViewStyle(PageTabViewStyle())
+//                    .background(.thinMaterial)
+//                }
+//                if tabViewSet == "7" {
+//                    TabView{
+//                        ItalyView()
+//                    }
+//                    .tabViewStyle(PageTabViewStyle())
+//                    .background(.thinMaterial)
+//                }
+//            }//Tabview vstack
+//            .frame(maxWidth: .infinity, maxHeight: 400)
+//            .tabViewStyle(PageTabViewStyle())
+//            .background(.thinMaterial)
         } // Main body VStack
     } // Body some view
 } // Content view

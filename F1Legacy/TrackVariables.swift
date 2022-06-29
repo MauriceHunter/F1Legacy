@@ -21,6 +21,8 @@ let britain: [String: String] = [
     "description": "The 1950 British Grand Prix, formally known as The Royal Automobile Club Grand Prix d'Europe Incorporating The British Grand Prix,[4] was a Formula One motor race held on 13 May 1950 at the Silverstone Circuit in Silverstone, England. It was the first World Championship Formula One race, as well as the fifth British Grand Prix, and the third to be held at Silverstone after motor racing resumed after World War II. It was the first race of seven in the 1950 World Championship of Drivers."
 ]
 
+let Silverstone1950 = "The 1950 British Grand Prix, formally known as The Royal Automobile Club Grand Prix d'Europe Incorporating The British Grand Prix,[4] was a Formula One motor race held on 13 May 1950 at the Silverstone Circuit in Silverstone, England. It was the first World Championship Formula One race, as well as the fifth British Grand Prix, and the third to be held at Silverstone after motor racing resumed after World War II. It was the first race of seven in the 1950 World Championship of Drivers."
+
 let monaco: [String: String] = [
     "name": "Monaco",
     "image": "Monaco1950",
